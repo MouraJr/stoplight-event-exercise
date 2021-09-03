@@ -12,15 +12,15 @@
   const goLight = document.getElementById('goLight');
 
   // Listener for click on buttons
-  stopButton.addEventListener('click', function () {
+  stopButton.addEventListener('click', () => {
     stopLight.classList.toggle('stop');
   });
 
-  slowButton.addEventListener('click', function () {
+  slowButton.addEventListener('click', () => {
     slowLight.classList.toggle('slow');
   });
 
-  goButton.addEventListener('click', function () {
+  goButton.addEventListener('click', () => {
     goLight.classList.toggle('go');
   });
 
@@ -35,51 +35,35 @@
   // Buttons variable
   const buttons = document.querySelectorAll('.button');
 
+
   for (let btn of buttons) {
     btn.addEventListener('mouseenter', () => {
       console.log(`"Entered ${btn.innerHTML} button"`)
     });
 
-    btn.addEventListener('mouseleave', function () {
+    btn.addEventListener('mouseleave', () => {
       console.log(`"Left ${btn.innerHTML} button"`)
     });
+
+    /* ## Bonus */
+    /*
+    Add **one** DOM event listener and **one** handler to log the state of each bulb.
+    - When a user clicks a button that just turned on, log`"<textContent> bulb on"` to the console.
+    - When a user clicks a button that just turned off, log`"<textContent> bulb off"` to the console.
+    **TIP:** A click on only a button should cause a message to be logged to the console. 
+    */
+    let count = 1;
+
+    btn.addEventListener('click', function (event) {
+      count++;
+      console.log(count);
+      if (count % 2 === 0) {
+        console.log(`${event.currentTarget.innerHTML} bulb on`);
+      } else if (count % 2 !== 0) {
+        console.log(`${event.currentTarget.innerHTML} bulb off`);
+      }
+    });
   }
-
-  // // Listener mouseenter and mouseleave
-  // stopButton.addEventListener('mouseenter', function () {
-  //   console.log(`"Entered <div id="stopButton" class="button">Stop</div> button"`)
-  // });
-
-  // stopButton.addEventListener('mouseleave', function () {
-  //   console.log(`"Left <div id="stopButton" class="button">Stop</div> button"`)
-  // });
-
-  // slowButton.addEventListener('mouseenter', function () {
-  //   console.log(`"Entered <div id="slowButton" class="button">Slow</div> button"`)
-  // });
-
-  // slowButton.addEventListener('mouseleave', function () {
-  //   console.log(`"Left <div id="slowButton" class="button">Slow</div> button"`)
-  // });
-
-  // goButton.addEventListener('mouseenter', function () {
-  //   console.log(`"Entered <div id="goButton" class="button">Go</div> button"`)
-  // });
-
-  // goButton.addEventListener('mouseleave', function () {
-  //   console.log(`"Left <div id="goButton" class="button">Go</div> button"`)
-  // });
-
-  /* ## Bonus */
-  /*
-  Add **one** DOM event listener and **one** handler to log the state of each bulb.
-  - When a user clicks a button that just turned on, log`"<textContent> bulb on"` to the console.
-  - When a user clicks a button that just turned off, log`"<textContent> bulb off"` to the console.
-  **TIP:** A click on only a button should cause a message to be logged to the console. 
-  */
-  // goButton.addEventListener('mouseenter', function () {
-  //   console.log(`"Entered <div id="goButton" class="button">Go</div> button"`)
-  // });
 
 
 })();
