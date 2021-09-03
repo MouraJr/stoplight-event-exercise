@@ -33,7 +33,8 @@
   ** TIP:** Each event type will need a separate event listener.
   */
   // Buttons variable
-  // const button = document.querySelectorAll('div #controls .button');
+  // const button = document.getElementsByClassName('button');
+  // console.log(button);
 
   // Listener mouseenter and mouseleave
   stopButton.addEventListener('mouseenter', function () {
@@ -67,7 +68,9 @@
   - When a user clicks a button that just turned off, log`"<textContent> bulb off"` to the console.
   **TIP:** A click on only a button should cause a message to be logged to the console. 
   */
-
+  // goButton.addEventListener('mouseenter', function () {
+  //   console.log(`"Entered <div id="goButton" class="button">Go</div> button"`)
+  // });
 
 
 })();
