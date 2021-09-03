@@ -33,33 +33,42 @@
   ** TIP:** Each event type will need a separate event listener.
   */
   // Buttons variable
-  // const button = document.getElementsByClassName('button');
-  // console.log(button);
+  const buttons = document.querySelectorAll('.button');
 
-  // Listener mouseenter and mouseleave
-  stopButton.addEventListener('mouseenter', function () {
-    console.log(`"Entered <div id="stopButton" class="button">Stop</div> button"`)
-  });
+  for (let btn of buttons) {
+    btn.addEventListener('mouseenter', () => {
+      console.log(`"Entered ${btn.innerHTML} button"`)
+    });
 
-  stopButton.addEventListener('mouseleave', function () {
-    console.log(`"Left <div id="stopButton" class="button">Stop</div> button"`)
-  });
+    btn.addEventListener('mouseleave', function () {
+      console.log(`"Left ${btn.innerHTML} button"`)
+    });
+  }
 
-  slowButton.addEventListener('mouseenter', function () {
-    console.log(`"Entered <div id="slowButton" class="button">Slow</div> button"`)
-  });
+  // // Listener mouseenter and mouseleave
+  // stopButton.addEventListener('mouseenter', function () {
+  //   console.log(`"Entered <div id="stopButton" class="button">Stop</div> button"`)
+  // });
 
-  slowButton.addEventListener('mouseleave', function () {
-    console.log(`"Left <div id="slowButton" class="button">Slow</div> button"`)
-  });
+  // stopButton.addEventListener('mouseleave', function () {
+  //   console.log(`"Left <div id="stopButton" class="button">Stop</div> button"`)
+  // });
 
-  goButton.addEventListener('mouseenter', function () {
-    console.log(`"Entered <div id="goButton" class="button">Go</div> button"`)
-  });
+  // slowButton.addEventListener('mouseenter', function () {
+  //   console.log(`"Entered <div id="slowButton" class="button">Slow</div> button"`)
+  // });
 
-  goButton.addEventListener('mouseleave', function () {
-    console.log(`"Left <div id="goButton" class="button">Go</div> button"`)
-  });
+  // slowButton.addEventListener('mouseleave', function () {
+  //   console.log(`"Left <div id="slowButton" class="button">Slow</div> button"`)
+  // });
+
+  // goButton.addEventListener('mouseenter', function () {
+  //   console.log(`"Entered <div id="goButton" class="button">Go</div> button"`)
+  // });
+
+  // goButton.addEventListener('mouseleave', function () {
+  //   console.log(`"Left <div id="goButton" class="button">Go</div> button"`)
+  // });
 
   /* ## Bonus */
   /*
